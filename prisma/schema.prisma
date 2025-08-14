@@ -1,0 +1,194 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Patron {
+  patronId         Int    @id @default(autoincrement())
+  patronEmail        String   @unique
+  patronPassword     String   
+  patronFirstName    String
+  patronLastName     String
+  
+  isStudent          Boolean  @default(false)
+  isFaculty          Boolean  @default(false)
+
+  patronCreatedAt    DateTime @default(now())
+  patronUpdatedAt    DateTime @updatedAt
+
+  studentProfile     Student?
+  facultyProfile     Faculty?
+
+  // Relations to borrowing and reservation history
+  borrowedItems      Transaction[]
+  reservations       Reservation[]
+  purchaseRequests   PurchaseRequest[]
+}
+
+
+model Admin {
+  adminId       Int    @id @default(autoincrement())
+  updatedSettings LibrarySettings[]
+  adminEmail    String   @unique
+  adminPassword String
+  adminFirstName String
+  adminLastName  String
+
+}
+
+
+model Librarian {
+  librarianId       Int    @id @default(autoincrement())
+  librarianEmail    String   @unique
+  librarianPassword String
+  librarianFirstName String
+  librarianLastName  String
+}
+
+model Student {
+  studentId                 Int    @id @default(autoincrement())
+  studentDepartment         String?
+  studentSemester           Int?
+  studentRollNo             Int?
+  studentEnrollmentNumber   Int?   @unique
+
+  patron                      Patron @relation(fields: [patronId], references: [patronId])
+  patronId                    Int @unique
+}
+
+model Faculty {
+  facultyId                 Int    @id @default(autoincrement())
+  facultyDepartment         String?
+
+  patron                      Patron @relation(fields: [patronId], references: [patronId])
+  patronId                    Int @unique
+}
+
+model Item {
+  itemId           Int    @id @default(autoincrement())
+  title            String
+  author           String
+  isbn             String?    @unique
+  subject          String?
+  keywords         String?
+  itemType         String
+  price            Float
+  imageUrl         String?
+  location         String?    @default("General Collection")
+  totalCopies      Int        @default(1)
+  availableCopies  Int        @default(1)
+  isVisible        Boolean    @default(true)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  transactions Transaction[]
+  reservations Reservation[]
+  lostDamagedReports LostDamagedItem[]
+}
+
+model Transaction {
+  transactionId Int    @id @default(autoincrement())
+  borrowedAt    DateTime  @default(now())
+  returnedAt    DateTime?
+  dueDate       DateTime
+  isReturned    Boolean   @default(false)
+  finePaid      Float?
+
+  item          Item      @relation(fields: [itemId], references: [itemId])
+  itemId        Int
+
+  patron        Patron    @relation(fields: [patronId], references: [patronId])
+  patronId      Int
+}
+
+model Reservation {
+  reservationId  Int    @id @default(autoincrement())
+  reservedAt     DateTime  @default(now())
+  
+  // Relation to Item
+  item           Item      @relation(fields: [itemId], references: [itemId])
+  itemId         Int
+
+  patron         Patron    @relation(fields: [patronId], references: [patronId])
+  patronId       Int
+
+  @@unique([itemId, patronId])
+}
+
+model LibrarySettings {
+  librarySettingsId   Int      @id @default(1)
+  borrowingLimit      Int      @default(5)
+  loanPeriodDays      Int      @default(14)
+  finePerDay          Float    @default(1.0)
+  updatedAt           DateTime @updatedAt
+
+  // Relation to the Admin who last updated the settings
+  updatedBy           Admin?   @relation(fields: [updatedByAdminId], references: [adminId])
+  updatedByAdminId    Int?
+}
+
+model LostDamagedItem {
+  lostDamagedId    Int      @id @default(autoincrement())
+  type             String   // 'LOST' or 'DAMAGED'
+  reportedBy       String
+  description      String
+  status           String   @default("REPORTED") // 'REPORTED', 'INVESTIGATING', 'RESOLVED', etc.
+  
+  // Lost item specific fields
+  lastSeenLocation String?
+  estimatedValue   Float?
+  
+  // Damaged item specific fields
+  damageLevel      String?  // 'MINOR', 'MODERATE', 'SEVERE'
+  repairCost       Float?
+  repairable       Boolean?
+  
+  // Timestamps
+  reportedAt       DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  // Relations
+  item             Item     @relation(fields: [itemId], references: [itemId])
+  itemId           Int
+}
+
+model PurchaseRequest {
+  purchaseRequestId    Int      @id @default(autoincrement())
+  
+  // Item details (for new items not in the catalog)
+  title                String
+  author               String
+  isbn                 String?
+  subject              String?
+  itemType             String
+  justification        String   // Why the patron needs this item
+  urgency              String   @default("NORMAL") // 'LOW', 'NORMAL', 'HIGH', 'URGENT'
+  
+  // Request details
+  estimatedPrice       Float?
+  preferredVendor      String?
+  additionalNotes      String?
+  
+  // Status tracking
+  status               String   @default("PENDING") // 'PENDING', 'UNDER_REVIEW', 'APPROVED', 'REJECTED', 'ORDERED', 'RECEIVED'
+  adminComments        String?
+  
+  // Timestamps
+  requestedAt          DateTime @default(now())
+  reviewedAt           DateTime?
+  updatedAt            DateTime @updatedAt
+  
+  // Relations
+  patron               Patron   @relation(fields: [patronId], references: [patronId])
+  patronId             Int
+}
