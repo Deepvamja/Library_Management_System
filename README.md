@@ -1,39 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📚 Library Management System (LMS)
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+A next-gen Library Management System designed to automate and simplify library operations 🚀.
+From cataloging & circulation to user management & analytics, this LMS empowers libraries with real-time visibility, role-based security, and an intuitive UI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+✨ Core Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔎 Smart Cataloging – Add, edit, search, and filter books, journals & multimedia
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# library_manag_sys" 
-"# library_manag_sys" 
-"# library_manag_sys" 
+🔐 Role-Based Access – Secure login for Admin, Librarian, Patron
+
+📚 Circulation Management – Issue, return, renew books + auto fine calculation
+
+👥 Patron Dashboard – Borrowing history, reservations, overdue notifications
+
+🔒 Industry-Grade Features → Role-based access, fine calculation, reporting & analytics, inventory control.
+
+📊 Analytics & Reports – Popular books, overdue items, student activity
+
+📦 Inventory Control – Track lost/damaged items & conduct audits
+
+⚡ Modern UI/UX – Responsive, fast, and easy-to-use interface
+
+
+
+
+🛠 Tech Stack
+
+
+⚛️ React.js	Component-based UI
+
+▲ Next.js	Full-stack framework (SSR & API routes)
+
+🎨 TailwindCSS	Modern utility-first styling
+
+🔗 Prisma ORM	Elegant database modeling & queries
+
+🗄️ MySQL	Relational database for persistence
+
+🛡️ JWT & RBAC	Secure authentication & role management
+
+🌐 Git + GitHub	Version control & collaboration
+
+
+
+
+🔒 User Roles
+
+
+Admin 🛡️ → Manage users, roles, system configs, reports
+
+Librarian 📖 → Catalog books, issue/return, manage overdue, track inventory
+
+Patron 👤 → Search, reserve, borrow books, view history, manage profile
+
+
+
+⏳ Advanced analytics & SMS/email notifications (planned)
+
+
+
+We 💙 contributions!
+
+Fork the repo
+
+Create a branch (feature/xyz)
+
+Commit & push
+
+Open a PR 🚀
+
+
+If you found this project helpful, don’t forget to Star ⭐ the repo and share it with others!
