@@ -1,0 +1,239 @@
+/* Theme CSS Variables */
+:root {
+  /* Light theme */
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+.dark {
+  /* Dark theme */
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+}
+
+.ocean {
+  /* Ocean theme */
+  --primary: 188 100% 42%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 200 6% 10%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 200 6% 10%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 188 100% 42%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 200 6% 20%;
+  --input: 200 6% 15%;
+  --ring: 188 100% 42%;
+  --background: 200 6% 10%;
+  --foreground: 188 100% 42%;
+}
+
+.sunset {
+  /* Sunset theme */
+  --primary: 25 95% 53%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 20 14.3% 4.1%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 20 14.3% 4.1%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 25 95% 53%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 96%;
+  --ring: 25 95% 53%;
+  --background: 20 5.9% 96%;
+  --foreground: 20 14.3% 4.1%;
+}
+
+.forest {
+  /* Forest theme */
+  --primary: 142 76% 36%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 140 6% 10%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 140 6% 10%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 142 76% 36%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 140 6% 20%;
+  --input: 140 6% 15%;
+  --ring: 142 76% 36%;
+  --background: 140 6% 10%;
+  --foreground: 142 76% 36%;
+}
+
+.lavender {
+  /* Lavender theme */
+  --primary: 262 83% 58%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 270 5% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 270 5% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 262 83% 58%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 270 5% 91%;
+  --input: 270 5% 91%;
+  --ring: 262 83% 58%;
+  --background: 270 5% 98%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+/* Animated background gradients for themes */
+.theme-gradient {
+  background: linear-gradient(-45deg, 
+    var(--background), 
+    hsl(var(--secondary)), 
+    hsl(var(--accent)), 
+    hsl(var(--primary))
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.ocean.theme-gradient {
+  background: linear-gradient(-45deg, #0f172a, #164e63, #0891b2, #06b6d4);
+  background-size: 400% 400%;
+}
+
+.sunset.theme-gradient {
+  background: linear-gradient(-45deg, #fff7ed, #fed7aa, #fb923c, #ea580c);
+  background-size: 400% 400%;
+}
+
+.forest.theme-gradient {
+  background: linear-gradient(-45deg, #14532d, #166534, #16a34a, #22c55e);
+  background-size: 400% 400%;
+}
+
+.lavender.theme-gradient {
+  background: linear-gradient(-45deg, #faf5ff, #e9d5ff, #a855f7, #9333ea);
+  background-size: 400% 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Card hover effects for different themes */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.ocean .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(6, 182, 212, 0.2), 0 10px 10px -5px rgba(6, 182, 212, 0.1);
+}
+
+.sunset .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(251, 146, 60, 0.2), 0 10px 10px -5px rgba(251, 146, 60, 0.1);
+}
+
+.forest .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.2), 0 10px 10px -5px rgba(34, 197, 94, 0.1);
+}
+
+.lavender .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(168, 85, 247, 0.2), 0 10px 10px -5px rgba(168, 85, 247, 0.1);
+}
+
+/* Scrollbar styling for themes */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent-foreground));
+}
+
+/* Theme transition animations */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ocean .glass {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.sunset .glass {
+  background: rgba(251, 146, 60, 0.1);
+  border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
+.forest .glass {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.lavender .glass {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
