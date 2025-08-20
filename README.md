@@ -59,13 +59,13 @@ From cataloging & circulation to user management & analytics, this LMS empowers 
 Admin 🛡️ → Manage users, roles, system configs, reports
 
 👤 Admin User
-<img src="./assets/admin_user.png" alt="Dashboard" width="800"/>  
+<img src="assets/admin_user.png"  width="800"/>  
 
 ### 📖 Book Catalog 
-<img src="./assets/admin_catalog.png" alt="Login Page" width="800"/>  
+<img src="assets/admin_catalog.png"  width="800"/>  
 
 ### 📊 Reports & Analytics
-<img src="./assets/admin_reports.png" alt="Book Catalog" width="800"/>   
+<img src="assets/admin_reports.png"  width="800"/>   
 
 
 
