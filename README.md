@@ -55,11 +55,10 @@ From cataloging & circulation to user management & analytics, this LMS empowers 
 
 🔒 User Roles
 
-
 Admin 🛡️ → Manage users, roles, system configs, reports
 
 👤 Admin User
-<img src="assests/admin_user.png"  width="800"/>  
+<img src="assests/admin_user.png"  width="900"/>  
 
 ### 📖 Book Catalog 
 <img src="assests/admin_catalog.png"  width="800"/>  
@@ -72,22 +71,22 @@ Admin 🛡️ → Manage users, roles, system configs, reports
 Librarian 📖 → Catalog books, issue/return, manage overdue, track inventory
 
 📚 Library Book
-<img src="assests/library_book.png" alt="Dashboard" width="800"/>  
+<img src="assests/library_Book.png"  width="900"/>  
 
 🔄 Library Circulation
-<img src="assests/library_circulation.png" alt="Login Page" width="800"/>  
+<img src="assests/library_circulation.png"  width="900"/>  
 
 🧑‍🎓 Library Patron
-<img src="assests/library_patron.png" alt="Login Page" width="800"/>  
+<img src="assests/library_patron.png"  width="900"/>  
 
 
 Patron 👤 → Search, reserve, borrow books, view history, manage profile
 
 ### 👤 Patron Profile  
-<img src="./assets/patron.png" alt="Patron Profile" width="800"/> 
+<img src="assests/patron.png"  width="800"/> 
 
 🧑‍🎓 Patron Account Management
-<img src="./assets/patron_accountmanagement.png" alt="Patron Profile" width="800"/> 
+<img src="assests/patron_accountmanagement.png"  width="800"/> 
 
 
 
