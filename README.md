@@ -93,16 +93,19 @@ Patron 👤 → Search, reserve, borrow books, view history, manage profile
 ⏳ Advanced analytics & SMS/email notifications (planned)
 
 
+🤝 How to Contribute
 
-We 💙 contributions!
+We welcome contributions from the community! If you'd like to help improve the project:
 
-Fork the repo
+1. 🍴 Fork the repository.
 
-Create a branch (feature/xyz)
+2. 🌿 Create a new branch for your feature: git checkout -b feature/AmazingNewFeature
 
-Commit & push
+3. 💻 Commit your changes: git commit -m 'Add some AmazingNewFeature'
 
-Open a PR 🚀
+4. 🚀 Push to the branch: git push origin feature/AmazingNewFeature
+
+5. 📬 Open a Pull Request.
 
 
 If you found this project helpful, don’t forget to Star ⭐ the repo and share it with others!
